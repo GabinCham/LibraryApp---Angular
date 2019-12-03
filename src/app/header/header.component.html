@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li routerLinkActive="active">
+        <a class="nav-link" routerLink="books">Livres</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="auth/signin" *ngIf="!isAuth">Connexion</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="auth/signup" *ngIf="!isAuth">Inscription</a>
+      </li>
+
+      <li class="nav-item">
+        <a (click)="onSignOut()"
+           *ngIf="isAuth"
+           style="cursor: pointer"
+           class="nav-link"
+           >Déconnexion</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
